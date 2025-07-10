@@ -1,0 +1,7 @@
+-> Probar PRIVMSG,si los mensajes se mandan a los otros usuarios - probar en 42
+-> Hacer todo de las invitaciones
+-> Limpiar código, especialmente el channel.hpp
+-> Gestionar leaks de new Channel?
+-> Mejorar RPL_CHANNELMODEIS y RPL_KICK
+-> En RPL_WELCOME cambiar el localhost final?
+-> Probar los comandos del mode

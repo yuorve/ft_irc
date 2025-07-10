@@ -1,0 +1,25 @@
+#pragma once
+
+#define RPL_WELCOME(nick)								":localhost 001 " + nick + " :Welcome to the Internet Relay Network " + nick + "!" + nick +"@localhost\r\n"
+#define RPL_CHANNELMODEIS(user, channelName)			":localhost 324 " + user + " " +  channelName + " +nt\r\n" //no es nt 						//CAMBIAR
+#define RPL_TOPIC(nick, channelName, topic)				":localhost 332 " + nick + " " + channelName + " :" + topic + "\r\n"
+#define RPL_TOPICWHOTIME(nick, channelName, topicDate)	":localhost 333 " + nick + " " + channelName + " " + nick + " " + topicDate + "\r\n"
+#define RPL_INVITING(nick, user, invited, channelName)  ":localhost 341 " + nick + "!" + user + "@localhost " + invited + " :#" + channelName + "\r\n"
+#define RPL_NAMREPLY(nick, channelName, userlist)		":localhost 353 " + nick + " = " + channelName + " :" + userlist + "\r\n"
+#define RPL_ENDOFNAMES(nick, channelName)				":localhost 366 " + nick + " " + channelName + " :End of /NAMES list.\r\n"
+#define ERR_NOSUCHNICK(nick, invited, channelName)      ":localhost 401 " + nick + " " + invited + " " + channelName + " :No such nick\r\n"
+#define ERR_NOSUCHCHANNEL(user, channelName)			":localhost 403 " + user + " " + channelName + " :No such channel\r\n"
+#define ERR_TOOMANYRECIP(nick)							":localhost 407 " + nick + " :Too many recipients.\r\n"
+#define ERR_NOTONCHANNEL(user, channelName)	    		":localhost 442 " + user + " " + channelName + " :You're not on that channel\r\n"
+#define ERR_USERONCHANNEL(user, channelName)			":servidor 443 " + user + " " + channelName + " :is already on channel\r\n"
+#define ERR_PRIVMSG(nick)                   			":localhost 461 " + nick + " PRIVMSG :Not enough parameters\r\n"
+#define ERR_PASSWDMISMATCH()                            ":localhost 464 * :Password incorrect\r\n"
+#define ERR_CHANNELISFULL(user, channelName)			":localhost 471" + user + " " + channelName + " :Cannot join channel (+l)\r\n"
+#define ERR_INVITEONLYCHAN(user, channelName)			":localhost 473 " + user + " " + channelName + " :Cannot join channel (+i)\r\n"
+// #define ERR_BANNEDFROMCHAN(user, channelName)			":localhost 474 " + user + " " + channelName + " :Cannot join channel (+b)\r\n"
+#define ERR_BADCHANNELKEY(user, channelName)			":localhost 475 " + user + " " + channelName + " :Cannot join channel (+k)\r\n"
+#define ERR_CHANOPRIVSNEEDED(nick, channelName)			":localhost 482 " + nick + " " + channelName + " :You do not have operator privileges\r\n"	//PROBAR
+#define RPL_JOIN(nick, user, channelName)				":" + nick + "!~" + user + "@localhost JOIN :" + channelName + "\r\n"
+#define RPL_KICK(user, channelName, reason)				":Gabri!~@localhost KICK " + channelName + " " + user + " " + reason + "\r\n"
+#define RPL_MODE(nick, user, channelName, mode, target) ":" + nick + "!" + user + "@localhost MODE " + channelName + " " + mode + " " + target + "\r\n"
+#define RPL_INVITE(nick, user, invited, channelName)    ":" + nick + "!" + user + "@localhost INVITE " + invited + " :#" + channelName + "\r\n"
